@@ -1,0 +1,17 @@
+%message-shared {
+  font-size: 12px;
+}
+
+.info {
+  @extend %message-shared;
+}
+
+.sucess {
+  @extend %message-shared;
+  color: #00FF00;
+}
+
+.warning {
+  @extend %message-shared;
+  color: #FF0000;
+}
