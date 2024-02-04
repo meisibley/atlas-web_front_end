@@ -1,0 +1,5 @@
+@for $head from 1 through 5 {
+  h#{$head} {
+    font-size: #{$head}px;
+  }
+}
