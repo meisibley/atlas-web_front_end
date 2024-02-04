@@ -1,0 +1,12 @@
+@mixin mrgn($mrgn: 10px) {
+  margin-left: $mrgin;
+  margin-right: $mrgn;
+}
+
+body {
+  @include mrgn;
+}
+
+div {
+  @include mrgn($mrgn: 15px);
+}
