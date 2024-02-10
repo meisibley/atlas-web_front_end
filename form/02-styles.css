@@ -112,7 +112,7 @@ button, select {
 }
 
 fieldset {
-  displey: flex;
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   border: 0;
