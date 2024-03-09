@@ -17,6 +17,10 @@ function countPrimeNumbers() {
     return count;
 }
 const startTime = performance.now();
-countPrimeNumbers();
+setTimeout(() => {
+    for(let k = 0; k < 100; k++) {
+        countPrimeNumbers();
+    }
+}, 0);
 const endTime = performance.now();
-console.log(`Execution time of printing countPrimeNumbers was ${endTime - startTime} milliseconds.`);
+console.log(`Execution time of calculating prime numbers 100 times was ${endTime - startTime} milliseconds.`);
