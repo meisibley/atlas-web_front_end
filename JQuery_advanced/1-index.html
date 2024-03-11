@@ -5,18 +5,19 @@
         <meta charset="utf-8" />
         <title>Task 0</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script type="">
+            function createTextElement(text) {
+                return $("<p></p>").text(text);
+            }
+            const textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in diam risus. Nunc sit amet euismod ipsum. Aenean tempus ex sed est volutpat, sed sodales velit tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin auctor sollicitudin eleifend. Vivamus porta enim vitae mauris commodo, vitae tempor tellus elementum. Quisque sed pellentesque nulla, at eleifend nisi. Phasellus eget tincidunt ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+            const paragraphElement = createTextElement(textContent);
+            $(document).ready(function() {
+                $("p").append(partagraphElement);
+            });
+        </script>
     </head>
 
     <body>
-        <script>
-            $(document).ready(function() {
-                if (jQuery) {
-                    console.log("jQuery has been loaded correctly");
-                } else {
-                    console.log("jQuery has not been loaded correctly");
-                }
-            });
-        </script>
     </body>
 
 </html>
