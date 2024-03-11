@@ -5,17 +5,17 @@
         <meta charset="utf-8" />
         <title>Task 0</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
-
         <script type="application/javascript">
             $(document).ready(function() {
-                if (jQuery) {
-                    console.log("jQuery has been loaded correctly");
-                } else {
-                    console.log("jQuery has not been loaded correctly");
+                function createFamilyTree() {
+                    const table = $("table").add("<table><tr><th>Firstname</th><th>Lastname</th></tr><tr><td>Guillaume</td><td>Salva</td></tr><tr><td>Paulette</td><td>Salva</td></tr><tr><td>Antoine</td><td>Salva</td></tr></table>");
+                    ("body").append("table");
                 }
+                createFamilyTree();
             });
         </script>
     </head>
+
     <body>
     </body>
 
