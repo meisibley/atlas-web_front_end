@@ -1,8 +1,8 @@
 function createElement(data) {
     let paragraph = document.createElement("p");
     let content = document.createTextNode(`${data}`);
-    p.appendChild(content);
-    document.querySelector("body").appendChild(p);
+    paragraph.appendChild(content);
+    document.querySelector("body").appendChild(paragraph);
 };
 function queryWikipedia(callback) {
     let newRequest = new XMLHttpRequest();
