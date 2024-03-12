@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Task 6</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>        
+        <script type="application/javascript">
+            $(document).ready(function() {
+                function createFamilyTree() {
+                    const appendTable = $("table").add("<table><tr><th>Firstname</th><th>Lastname</th></tr></table>");
+                    $("body").append(appendTable);
+                }
+                function addNewMember(firstName, lastName, position) {
+                    /* add new firstName + lastName row */
+                    let addRow = $("<tr></tr>");
+                    addRow.append("<td>" + firstName + "</td>");
+                    addRow.append("<td>" + lastName + "</td>");
+                    /* create row remove button x */
+                    let removeBtnX = $("<td>(x)</td>");
+                    removeBtnX.css("background-color", "orange");
+                    removeBtnX.click(function() {
+                        $(addRow).remove();
+                    });
+                    /* firstName + lastName + (x)button */
+                    addRow.append(removeBtnX);
+                    if (position === "before") {
+                        $("tbody").prepend(addRow);
+                    } else {
+                        $("tbody").append(addRow);
+                    }
+                }
+                function createForm() {
+                    let dropDownSelect = $("<select></select>");
+                    dropDownSelect.append("<option value='before'>Before</option><option value='after'>After</option>");
+
+                    let submitBtn = $("<input type='submit'>");
+                    submitBtn.click(function() {
+                        let firstNameInput = $("input:first").val();
+                        let lastNameInput = $("input:nth-of-type(2)").val();
+                        let beforeOrAfter = dropDownSelect.val();
+                        addNewMember(firstNameInput, lastNameInput, beforeOrAfter);
+                    });
+                    
+                    $("body").before("<input type='text'>", "<input type='text'>", dropDownSelect, submitBtn);
+                }
+                createFamilyTree();
+                createForm();
+            });
+        </script>
+    </head>
+
+    <body>
+    </body>
+
+</html>
