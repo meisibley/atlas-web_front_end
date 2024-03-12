@@ -32,7 +32,7 @@
                 }
                 function createForm() {
                     let dropDownSelect = $("<select></select>");
-                    dropDownSelect.append("<option value='before'>Before</option><option value='after'>After</option>");
+                    dropDownSelect.append("<option value='after'>After</option><option value='before'>Before</option>");
 
                     let submitBtn = $("<input type='submit'>");
                     submitBtn.click(function() {
@@ -42,7 +42,7 @@
                         addNewMember(firstNameInput, lastNameInput, beforeOrAfter);
                     });
                     
-                    $("body").before("<input type='text'>", "<input type='text'>", dropDownSelect, submitBtn);
+                    $("body").prepend("<input type='text'>", "<input type='text'>", dropDownSelect, submitBtn);
                 }
                 createFamilyTree();
                 createForm();
