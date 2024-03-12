@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8" />
         <title>Task 3</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>        
         <script type="application/javascript">
             $(document).ready(function() {
                 function createFamilyTree() {
@@ -21,14 +21,12 @@
                     $("tbody > tr:nth-child(1)").append("<td></td>", "<td></td>");
                     $("tbody > tr:nth-child(2)").append("<td></td>", "<td></td>");
                     $("tbody > tr:nth-child(3)").append("<td></td>", "<td></td>");
-                    $("tr > td:nth-child(1)").append("Guillaume");
-                    $("tr > td:nth-child(2)").append("Salva");
-                    $("tbody > tr").append("<td></td>", "<td></td>");
-                    $("tr > td:nth-child(1)").append("Paulette");
-                    $("tr > td:nth-child(2)").append("Salva");
-                    $("tbody > tr").append("<td></td>", "<td></td>");
-                    $("tr > td:nth-child(1)").append("Antoine");
-                    $("tr > td:nth-child(2)").append("Salva");
+                    $("tr:nth-child(1) > td:nth-child(1)").append("Guillaume");
+                    $("tr:nth-child(1) > td:nth-child(2)").append("Salva");
+                    $("tr:nth-child(2) > td:nth-child(1)").append("Paulette");
+                    $("tr:nth-child(2) > td:nth-child(2)").append("Salva");
+                    $("tr:nth-child(3) > td:nth-child(1)").append("Antoine");
+                    $("tr:nth-child(3) > td:nth-child(2)").append("Salva");
                 }
                 createFamilyTree();
             });
