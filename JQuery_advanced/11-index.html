@@ -41,6 +41,7 @@
                     let val1 = $("input").val();
                     let val2 = $("textarea").val();
                     let data = {"title": val1, "author": val2};
+                    
                     $("form").after("About to send the query to the API");
                     $.ajax
                     ({
