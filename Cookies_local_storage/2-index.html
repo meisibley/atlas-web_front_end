@@ -11,15 +11,25 @@
             let firstname = inputF.value;
             let email = inputE.value;
             /* expire in 10 days */
-            let expireDate = new Date(Date.now() + (10*24*60*60*1000));
+            let expireDate = new Date(Date.now() + (10 * 24 * 60 * 60 * 1000));
             date = expireDate.toUTCSring();
             document.cookie = `firstname=${firstname}; expires=${date}`;
             document.cookie = `email=${email}; expires=${date}`;
         }
         function showCookies() {
             let p = document.createElement("p");
-            p.textContent = "Cookies: " + document.cookie;
-            document.body.append(p);
+            p.textContent = `Email: ${getCookie("email")} - Firstname: ${getCookie("firstname")}`;
+            document.body.appendChild(p);
+        }
+        function getCookie(name) {
+            let cookieItems = document.cookie.split(";");
+            for (let item of cookieItems) {
+                let [itemName, value] = item.trim().split("=");
+                if (itemName == name) {
+                    return value;
+                }
+            }
+            return "";
         }
     </script>
 </head>
