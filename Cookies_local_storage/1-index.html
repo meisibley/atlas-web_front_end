@@ -12,7 +12,7 @@
             let email = inputE.value;
             /* expire in 10 days */
             let expireDate = new Date(Date.now() + (10*24*60*60*1000));
-            date = expireDate.toUTCSring();
+            date = expireDate.toUTCString();
             document.cookie = `firstname=${firstname}; expires=${date}`;
             document.cookie = `email=${email}; expires=${date}`;
         }
