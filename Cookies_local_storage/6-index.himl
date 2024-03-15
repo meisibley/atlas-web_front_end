@@ -40,15 +40,15 @@
     }
 
     function displayCart() {
-      if (sessionStorage.length) {
-        let cartItems = document.querySelector('#item');
-        if (!cartItems) {
-            cartItems = document.createElement('p');
-            cartItems.id = 'item';
-            document.querySelector('body').appendChild(cartItems);
+        if (sessionStorage.length) {
+            let cartItems = document.querySelector('#item');
+            if (!cartItems) {
+                cartItems = document.createElement('p');
+                cartItems.id = 'item';
+                document.querySelector('body').appendChild(cartItems);
+            }
+            cartItems.textContent = `You previously had ${sessionStorage.length} items in your cart`;
         }
-        cartItems.textContent = `You previously had ${sessionStorage.length} items in your cart`;
-      }
     }
   </script>
 </body>
