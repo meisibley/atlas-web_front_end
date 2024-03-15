@@ -26,7 +26,7 @@
         displayCart();
     }
 
-    function createStore () {
+    function createStore() {
         const ul = document.createElement('ul');
         document.querySelector('body').appendChild(ul);
         availableItems.forEach(function (item) {
@@ -39,7 +39,7 @@
         });
     }
 
-    function displayCart () {
+    function displayCart() {
       if (sessionStorage.length) {
         let cartItems = document.querySelector('#item');
         if (!cartItems) {
