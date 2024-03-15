@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Task 4</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js"></script>
+</head>
+<body>
+    <script type="application/javascript"> 
+        function setCookies() {
+            let inputF = document.getElementById("firstname");
+            let inputE = document.getElementById("email");
+            let firstname = inputF.value;
+            let email = inputE.value;
+            /* expire in 10 days */
+            let expireDate = new Date(Date.now() + (10*24*60*60*1000));
+            date = expireDate.toUTCString();
+            document.cookie = `firstname=${firstname}; expires=${date}`;
+            document.cookie = `email=${email}; expires=${date}`;
+        }
+        function showCookies() {
+            let p = document.createElement("p");
+            p.textContent = `Email: ${getCookie("email")} - Firstname: ${getCookie("firstname")}`;
+            document.body.appendChild(p);
+        }
+        function showForm() {
+            document.getElementById("inputForm").style.display = "block";
+        }
+        function hideForm() {
+            document.getElementById("inputForm").style.display = "none";
+        }
+        function deleteCookiesAndShowForm() {
+            let expireDate = new Date(Date.now() + (10*24*60*60*1000));
+            date = expireDate.toUTCString();
+            document.cookie = `firstname=""; expires=${date}`;
+            document.cookie = `email=""; expires=${date}`;
+            document.getElementById("welcomeLogout").style.display = "none";
+            showForm();
+        }
+        function showWelcomeMessageOrForm() {
+            if (Cookies.get("firstname") == ""){
+                showForm()
+            } else {
+                hideForm()
+            }
+            document.getElementById("cookieName").innerHTML = Cookies.get("firstname");
+            document.getElementById("welcomeLogout").style.display = "block";
+        }
+        function setCookiesAndShowWelcomeMessage() {
+            setCookies();
+            showWelcomeMessageOrForm();
+        }
+    </script>
+    <div id="inputForm">
+        <h2>Login to the website</h2>
+        <input type="text" id="firstname" placeholder="Firstname">
+        <input type="text" id="email" placeholder="Email">
+        <button onclick="setCookiesAndShowWelcomeMessage();">Log me in</button>
+    </div>
+    <div class="welcomeLogout">
+        <p style="display: none; font-size: 40px; font-weight: bold" id="welcomeLogout">Welcome <span id="cookieName"></span><span id="logout" onclick="deleteCookiesAndShowForm();" style="font-weight: normal; font-style: italic; margin-left: 10px; cursor: pointer;">( Logout )</span></p>
+    </div>
+</body>
+</html>
+</body>
+</html>
